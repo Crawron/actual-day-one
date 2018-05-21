@@ -10,7 +10,14 @@ export class Cube {
         this.mesh = new Mesh(geometry, material)
     }
 
-    update() {
-        
+    update(t: number) {
+        this.mesh.position.y = oscilate(t)
     }
+}
+
+function oscilate(t: number) {
+    const amplitude = 0.2
+    const frequency = 0.07
+
+    return Math.sin(t * frequency) * amplitude
 }
