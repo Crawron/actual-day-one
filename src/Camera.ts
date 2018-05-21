@@ -1,8 +1,8 @@
 import { OrthographicCamera, Vector3 } from "three"
 
-const zoom = .005
-const xRadius = window.innerWidth / 2 * zoom
-const yRadius = window.innerHeight / 2 * zoom
+const zoom = 50
+const xRadius = window.innerWidth / 2 / zoom
+const yRadius = window.innerHeight / 2 / zoom
 
 export const mainCamera = new OrthographicCamera(-xRadius, xRadius, yRadius, -yRadius)
 
