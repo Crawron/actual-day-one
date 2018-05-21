@@ -8,7 +8,7 @@ import { Grid } from './Classes/Grid'
 
 
 const mainScene = new Scene
-const grid = new Grid(11, 11)
+const grid = new Grid(15, 15)
 
 function loadScene() {
 	// Lighting
