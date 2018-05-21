@@ -4,18 +4,18 @@ import { hemisphereLight } from "./Lighting"
 import { mainCamera } from "./Camera"
 import { renderer } from "./Renderer"
 
-import { Cube } from './Cube'
+import { Grid } from './Classes/Grid'
 
 
 const mainScene = new Scene
-const cube = new Cube
+const grid = new Grid(11, 11)
 
 function loadScene() {
 	// Lighting
 	mainScene.add(hemisphereLight)
 
 	// Meshes
-	mainScene.add(cube.mesh)
+	grid.meshes.forEach(mesh => mainScene.add(mesh))
 }
 
 function init() {
@@ -25,10 +25,9 @@ function init() {
 
 
 function animate() {
-	requestAnimationFrame(animate)
+	const frame = requestAnimationFrame(animate)
 
-	cube.update()
-	
+	grid.update(frame)
 	renderer.render(mainScene, mainCamera)
 }
 
